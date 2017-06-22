@@ -1,2 +1,32 @@
-<h1>Hello World</h1>
-<p>See Me in views/static/index.html.erb</p>
+
+    
+    <h1>Hate Scoure The World</h1>
+    <h1>Impending doom seek for eternal hate,<br> scourge the land as if,<br> the swarm will dominate them alL</h1>
+    
+    <form action="/shorten_link" method="post">
+        Paste a link to shorten it<br>
+        <input type="text" name="long" value="">
+        <input type="submit" value="SHORTEN">
+    </form>
+    
+    
+
+    <table>
+        <tr>
+            
+            <th>Long URL</th>
+            <th>Short URL</th>
+            <th>COUNT</th>
+        </tr>
+        
+        <% @urls.each do |u| %>
+        
+        <tr>
+            <td><%= u.long_url %></td>
+            <td><a onclick="clickCounter()" href= "<%= u.short_url%>" target="_blank"</a> <%="https://localhost:9393/" + u.short_url %></td>
+            <td id='result'><%= u.count %></td>
+        </tr>
+        <% end %>
+    </table>
+
+
